@@ -24,5 +24,5 @@ $.fn.silentSave = function() {
 }
 
 $(function() {
-	$().initializeEditor('');
+	$().initializeEditor(''[]);
 });
