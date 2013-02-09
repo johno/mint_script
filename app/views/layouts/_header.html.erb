@@ -1,0 +1,36 @@
+<header>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <%= link_to 'mintscript', root_path, class: 'brand' %>
+      <ul class="nav pull-right">
+        <% if controller_name == 'scripts' %>
+          <li>
+            <%= link_to '#', onclick: "$().silentSave();" do %>
+              <i class="icon-briefcase"></i>
+            <% end %>
+          </li>
+        <% end %>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class='icon-user'></i>
+            <b class="caret"></b>
+          </a>
+
+          <ul class="dropdown-menu pull-right">
+            <% if user_signed_in? %>
+              <li><%= link_with_icon icon: :plus, path: new_script_path, text: :create_a_new_script %></li>
+              <li class="divider"></li>
+              <li><%= link_with_icon icon: :cog, path: '#', text: :edit_script_settings %></li>
+              <li class="divider"></li>
+              <li><%= link_with_icon icon: :picture, path: '#', text: :edit_your_profile %></li>
+            <% else %>
+              <li><%= link_with_icon icon: :leaf, path: try_path, text: :give_mintscript_a_try! %></li>
+            <% end %>
+            <li class="divider"></li>
+            <li><%= render partial: 'layouts/log_in_or_out' %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

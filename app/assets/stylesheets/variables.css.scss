@@ -1,0 +1,14 @@
+$headingsFontWeight: 300;
+$headingsColor: #666;
+
+$primaryGray: #f5f5f5;
+
+$border: thin solid #ddd;
+$outline: thin solid #fafafa;
+
+@import 'bootstrap';
+
+header { position: relative; }
+.nav .dropdown-toggle .caret,
+.nav .dropdown-toggle .caret:hover,
+.nav .dropdown-toggle .caret:visited { opacity: 0.4; border-bottom-color: #444; border-top-color: #444; }

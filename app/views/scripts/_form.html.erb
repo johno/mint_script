@@ -1,0 +1,7 @@
+<%= form_for(@script, html: { class: 'form' }) do |f| %>
+  <%= f.hidden_field :content, id: 'content-field' %>
+  <%= f.hidden_field :file_type, id: 'file-type-field' %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+<% end %>
+
+<%= render partial: 'layouts/editor' %>
