@@ -6,9 +6,9 @@ module ApplicationHelper
     method = options[:method]
 
     if method.nil?
-      return link_to "#{icon(icon)} #{text}".html_safe, path
+      return link_to "#{icon(icon)} &nbsp; #{text}".html_safe, path
     else
-      return link_to "#{icon(icon)} #{text}".html_safe, path, method: method
+      return link_to "#{icon(icon)} &nbsp; #{text}".html_safe, path, method: method
     end
   end
   
