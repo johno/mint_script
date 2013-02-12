@@ -20,9 +20,9 @@
             <% if user_signed_in? %>
               <li><%= link_with_icon icon: :plus, path: new_script_path, text: :create_a_new_script %></li>
               <li class="divider"></li>
-              <li><%= link_with_icon icon: :cog, path: '#', text: :edit_script_settings %></li>
+              <li><%= link_with_icon icon: :home, path: '#', text: :your_profile %></li>
               <li class="divider"></li>
-              <li><%= link_with_icon icon: :picture, path: '#', text: :edit_your_profile %></li>
+              <li><%= link_with_icon icon: :tasks, path: scripts_path, text: :explore_scripts %>
             <% else %>
               <li><%= link_with_icon icon: :leaf, path: try_path, text: :give_mintscript_a_try! %></li>
             <% end %>

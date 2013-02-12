@@ -1,3 +1,4 @@
+$heroUnitBackground: #ddd;
 $headingsFontWeight: 300;
 $headingsColor: #666;
 
@@ -7,8 +8,12 @@ $border: thin solid #ddd;
 $outline: thin solid #fafafa;
 
 @import 'bootstrap';
+@import 'bootstrap-responsive';
 
 header { position: relative; }
 .nav .dropdown-toggle .caret,
 .nav .dropdown-toggle .caret:hover,
 .nav .dropdown-toggle .caret:visited { opacity: 0.4; border-bottom-color: #444; border-top-color: #444; }
+
+.hero-unit > h1 { margin-bottom: 0; padding-bottom: 0; }
+.hero-unit > h3 { margin-top: 0; }
