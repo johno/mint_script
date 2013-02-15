@@ -1,5 +1,5 @@
 class ScriptsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:try]
   
   # GET /scripts
   # GET /scripts.json
@@ -83,5 +83,9 @@ class ScriptsController < ApplicationController
       format.html { redirect_to scripts_url }
       format.json { head :no_content }
     end
+  end
+  
+  def try
+    @script = Script.new
   end
 end

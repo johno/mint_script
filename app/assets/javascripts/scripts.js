@@ -23,6 +23,7 @@ $.fn.silentSave = function() {
 	$('.form').submit();
 }
 
+/*
 $(function() {
 	$().initializeEditor('');
-});
+});*/

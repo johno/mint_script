@@ -3,5 +3,5 @@ MintScript::Application.routes.draw do
   devise_for :users
 
   root to: 'static_pages#home'
-  match '/try' => 'static_pages#try', via: [:get]
+  match '/try' => 'scripts#try', via: [:get]
 end
