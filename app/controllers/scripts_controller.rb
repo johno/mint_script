@@ -4,7 +4,7 @@ class ScriptsController < ApplicationController
   # GET /scripts
   # GET /scripts.json
   def index
-    @scripts = Script.where 'user_id IN (?)', current_user.id
+    @scripts = Script.where('user_id IN (?)', current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class ScriptsController < ApplicationController
   # GET /scripts/1
   # GET /scripts/1.json
   def show
-    @script = Script.find params[:id]
+    @script = Script.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -37,18 +37,18 @@ class ScriptsController < ApplicationController
 
   # GET /scripts/1/edit
   def edit
-    @script = Script.find params[:id]
+    @script = Script.find(params[:id])
     @user = current_user
   end
 
   # POST /scripts
   # POST /scripts.json
   def create
-    @script = Script.new params[:script]
+    @script = Script.new(params[:script])
 
     respond_to do |format|
       if @script.save
-        format.html { redirect_to edit_script_path @script }
+        format.html { redirect_to edit_script_path(@script) }
         format.json { render json: @script, status: :created, location: @script }
       else
         format.html { render action: :new }
@@ -60,7 +60,7 @@ class ScriptsController < ApplicationController
   # PUT /scripts/1
   # PUT /scripts/1.json
   def update
-    @script = Script.find params[:id]
+    @script = Script.find(params[:id])
 
     respond_to do |format|
       if @script.update_attributes(params[:script])
@@ -76,11 +76,11 @@ class ScriptsController < ApplicationController
   # DELETE /scripts/1
   # DELETE /scripts/1.json
   def destroy
-    @script = Script.find params[:id]
+    @script = Script.find(params[:id])
     @script.destroy
 
     respond_to do |format|
-      format.html { redirect_to scripts_url }
+      format.html { redirect_to scripts_path }
       format.json { head :no_content }
     end
   end
