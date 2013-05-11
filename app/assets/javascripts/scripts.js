@@ -1,6 +1,7 @@
 $.fn.initializeEditor = function(content) {
 	$().activateAce();
 	$().setEditorContent(content);
+	$().setEditorStyling(ace.edit('editor'));
 }
 
 $.fn.activateAce = function() {
@@ -19,4 +20,13 @@ $.fn.silentSave = function() {
 		ace.edit("editor")
 			.getValue());
 	$('.form').submit();
+}
+
+$.fn.setEditorStyling = function(editor) {
+  editor.renderer.setShowGutter(false);
+  editor.getSession().setTabSize(2);
+  editor.getSession().setUseSoftTabs(true);
+  editor.getSession().setUseWrapMode(true);
+  editor.setHighlightActiveLine(false);
+  editor.setShowPrintMargin(false);
 }
