@@ -12,13 +12,13 @@ $.fn.activateAce = function() {
 $.fn.setEditorContent = function(content) {
 	ace.edit('editor')
 		.getSession()
-			.setValue(content);
+			.setValue(unescape(content));
 }
 
 $.fn.silentSave = function() {
 	$('#content-field').val(
-		ace.edit("editor")
-			.getValue());
+	  escape(ace.edit("editor")
+			.getValue()));
 	$('.form').submit();
 }
 
