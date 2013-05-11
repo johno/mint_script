@@ -23,6 +23,8 @@ $.fn.silentSave = function() {
 }
 
 $.fn.setEditorStyling = function(editor) {
+  editor.getSession().setMode("ace/mode/markdown");
+  editor.setTheme("ace/theme/tomorrow");
   editor.renderer.setShowGutter(false);
   editor.getSession().setTabSize(2);
   editor.getSession().setUseSoftTabs(true);
