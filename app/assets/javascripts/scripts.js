@@ -2,6 +2,7 @@ $.fn.initializeEditor = function(content) {
 	$().activateAce();
 	$().setEditorContent(content);
 	$().setEditorStyling(ace.edit('editor'));
+	$().initializeShowdown();
 }
 
 $.fn.activateAce = function() {
@@ -31,4 +32,16 @@ $.fn.setEditorStyling = function(editor) {
   editor.getSession().setUseWrapMode(true);
   editor.setHighlightActiveLine(false);
   editor.setShowPrintMargin(false);
+}
+
+$.fn.initializeShowdown = function() {
+  var converter = new Showdown.converter();
+  $().setPreviewWithShowdown(converter);
+  ace.edit('editor').getSession().on('change', function(e) {
+    $().setPreviewWithShowdown(converter);
+  })
+}
+
+$.fn.setPreviewWithShowdown = function(converter) {
+  $('#preview').html(converter.makeHtml(ace.edit('editor').getValue()));
 }
