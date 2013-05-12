@@ -45,3 +45,8 @@ $.fn.initializeShowdown = function() {
 $.fn.setPreviewWithShowdown = function(converter) {
   $('#preview').html(converter.makeHtml(ace.edit('editor').getValue()));
 }
+
+$.fn.fullScreenEditor = function() {
+  $('#preview').slideToggle();
+  $('#editor').toggleClass('full-width-editor');
+}
