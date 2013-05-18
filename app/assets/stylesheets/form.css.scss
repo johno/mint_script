@@ -14,13 +14,9 @@
 
 .form h1 { margin-bottom: 40px; }
 
-.form .field {
-	height: 50px;
-	width: 100%; 
-	clear: both;
-	
-	label { margin-top: 10px; float: left; width: 15%; text-align: right; } 
-	input { float: right; width: 75%; height: 30px; } 
+.form {
+	.input label { float: left; width: 15%; text-align: right; line-height: 43px; } 
+	.input input { float: right; width: 75%; height: 30px; } 
 }
-.form #submit { padding-top: 8px; width: 77%; height: 40px; }
-.form .field.checkbox { input { width: 5%; float: right; } }
+.form #submit { padding-top: 8px; width: 77%; height: 40px; float: right; }
+.form .actions { width: 100%; clear: both; min-height: 40px; }

@@ -18,3 +18,5 @@ header { position: relative; }
 
 .hero-unit > h1 { margin-bottom: 0; padding-bottom: 0; }
 .hero-unit > h3 { margin-top: 0; }
+
+.button { @include button($style: simple, $base-color: $green); }

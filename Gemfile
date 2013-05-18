@@ -22,11 +22,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-
+gem 'bourbon'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'will_paginate'
-gem 'twitter_bootstrap_form_for'
+gem 'simple_form'
 gem 'gravatar_image_tag'
 gem 'font-awesome-sass-rails'
 gem 'devise'
