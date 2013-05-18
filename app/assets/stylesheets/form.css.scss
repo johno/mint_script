@@ -1,22 +1,27 @@
 @import 'variables';
 
+@mixin super-box($box-color: $primaryGray) {
+  border-top: lighten($box-color, 20%);
+  border-left: lighten($box-color, 15%);
+  border-right: darken($box-color, 10%);
+  border-bottom: darken($box-color, 20%);
+  @include border-radius(3px);
+  @include box-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
+  @include radial-gradient(circle at 50% 50%, #eee 10%, $box-color 20%, #efefef);
+}
+
 .form.span8 {
 	float: none;
 	padding: 20px;
 	margin: auto auto;
 	margin-top: 30px;
-	
 	background-color: $primaryGray;
-	
 	border: $border;
 	outline: $outline;
+	@include super-box;
 }
-
 .form h1 { margin-bottom: 40px; }
-
-.form {
-	.input label { float: left; width: 15%; text-align: right; line-height: 43px; } 
-	.input input { float: right; width: 75%; height: 30px; } 
-}
+.form	.input label { float: left; width: 15%; text-align: right; line-height: 43px; } 
+.form .input input { float: right; width: 75%; height: 30px; } 
 .form #submit { padding-top: 8px; width: 77%; height: 40px; float: right; }
 .form .actions { width: 100%; clear: both; min-height: 40px; }

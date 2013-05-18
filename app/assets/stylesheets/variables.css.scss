@@ -2,7 +2,7 @@ $heroUnitBackground: #ddd;
 $headingsFontWeight: 300;
 $headingsColor: #666;
 
-$primaryGray: #f5f5f5;
+$primaryGray: #f1f1f1;
 
 $border: thin solid #ddd;
 $outline: thin solid #fafafa;
@@ -19,4 +19,4 @@ header { position: relative; }
 .hero-unit > h1 { margin-bottom: 0; padding-bottom: 0; }
 .hero-unit > h3 { margin-top: 0; }
 
-.button { @include button($style: simple, $base-color: $green); }
+.button { @include button($base-color: $green); }
