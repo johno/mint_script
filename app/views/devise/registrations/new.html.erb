@@ -1,15 +1,9 @@
-<div class="row">
-  <div class="form span8">
-    <h1>Sign up for mintscript</h1>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <% #= devise_error_messages! %>
-      <%= f.input :email, autofocus: true %>
-      <%= f.input :password %>
-      <%= f.input :password_confirmation, label: 'Confirm' %>
-      <div class="actions">
-        <%= f.submit 'Sign up for free!', class: :button, id: :submit %>
-      </div>
-    <% end %>
-    <%= render "devise/shared/links" %>
-  </div>
-</div>
+<h1>Get writing with mintscript</h1>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'pure-form pure-form-stacked' }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.input :email, autofocus: true %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation, label: 'Confirm' %>
+  <%= f.submit 'Sign up for free!', class: 'pure-button', id: :submit %>
+<% end %>
+<%= render "devise/shared/links" %>
