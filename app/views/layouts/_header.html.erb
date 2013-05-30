@@ -1,41 +1,14 @@
 <header>
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <%= link_to 'mintscript', root_path, class: 'brand' %>
-      <ul class="nav pull-right">
-        <% if controller_name == 'scripts' %>
-          <li>
-            <%= link_to '#', onclick: "$().silentSave();" do %>
-              <i class="icon-save"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to '#', onclick: '$().fullScreenEditor();' do %>
-              <i class='icon-code'></i>
-            <% end %>
-          </li>
+  <div class='pure-menu pure-menu-open pure-menu-horizontal'>
+    <%= link_to 'mintscript', root_path, class: 'pure-menu-heading' %>
+    <ul class='pull-right' >
+      <li>
+        <% if current_user %>
+          <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout %>
+        <% else %>
+          <%= link_with_icon path: new_user_session_path, icon: :signin %>
         <% end %>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class='icon-user'></i>
-            <b class="caret"></b>
-          </a>
-
-          <ul class="dropdown-menu pull-right">
-            <% if user_signed_in? %>
-              <li><%= link_with_icon icon: :plus, path: new_script_path, text: :create_a_new_script %></li>
-              <li class="divider"></li>
-              <li><%= link_with_icon icon: :home, path: '#', text: :your_profile %></li>
-              <li class="divider"></li>
-              <li><%= link_with_icon icon: :tasks, path: scripts_path, text: :explore_scripts %>
-            <% else %>
-              <li><%= link_with_icon icon: :leaf, path: try_path, text: :give_mintscript_a_try! %></li>
-            <% end %>
-            <li class="divider"></li>
-            <li><%= render partial: 'layouts/log_in_or_out' %></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+      </li>
+    </ul>
   </div>
 </header>
