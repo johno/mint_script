@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def link_with_icon options = {}
+  def link_with_icon(options = {})
     path = options[:path]
     icon = options[:icon]
     text = options[:text].to_s.titleize
@@ -12,7 +12,7 @@ module ApplicationHelper
     end
   end
   
-  def icon icon
+  def icon(icon)
     "<i class='icon-#{icon}'></i>".html_safe
   end
 end
