@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 
 
 group :production do
@@ -15,17 +15,14 @@ group :test, :development do
   gem 'sqlite3'
 end
 
+gem 'sass-rails',   '~> 3.2.3'
+gem 'coffee-rails', '~> 3.2.1'
+gem 'uglifier', '>= 1.0.3'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
-
+gem 'neat'
 gem 'bourbon'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
-gem 'will_paginate'
 gem 'simple_form'
 gem 'gravatar_image_tag'
 gem 'font-awesome-sass-rails'
