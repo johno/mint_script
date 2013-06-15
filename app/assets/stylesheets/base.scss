@@ -1,2 +1,29 @@
+@import 'bourbon';
+
+* { box-sizing: border-box; }
+
+$accentColor: #34D0B6;
+$padding: 20px;
+
 .pull-right { float: right; }
 .pull-left { float: left; }
+
+@mixin border($borderColor: $accentColor) {
+  border-top: thin solid darken($borderColor, 5%);
+  border-bottom: thin solid lighten($borderColor, 15%);
+}
+
+@mixin cake-layer($cakeLayerColor: $accentColor, $cakeLayerFontColor: white) {
+  @include linear-gradient($cakeLayerColor, darken($cakeLayerColor, 5%));
+  @include border($cakeLayerColor);
+  @include clearfix;
+
+  padding: $padding;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  color: $cakeLayerFontColor;
+  h1 { font-size: 4em; width: 60%; }
+}
+
+.cake-layer {
+  @include cake-layer;
+}

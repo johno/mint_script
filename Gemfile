@@ -2,17 +2,16 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-
 group :production do
   gem 'pg'
 end
-
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'sqlite3'
+  gem 'thin'
 end
 
 gem 'sass-rails',   '~> 3.2.3'
@@ -21,7 +20,7 @@ gem 'uglifier', '>= 1.0.3'
 
 gem 'neat'
 gem 'bourbon'
-gem 'pure-sass'
+gem 'pure-sass', '0.0.2'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'gravatar_image_tag'
