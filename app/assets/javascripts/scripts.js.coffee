@@ -23,6 +23,7 @@ editor =
 
   initializeShowdown: ->
     converter = new Showdown.converter()
+    
     editor.setPreviewWithShowdown(converter)
     ace.edit('editor').getSession().on('change', ->
       $().setPreviewWithShowdown(converter) )
