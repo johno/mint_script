@@ -1,7 +1,7 @@
 #editor {
 	position: absolute;
 	padding-top: 2px;
-	width: 45%;
+	width: 100%;
 	left: 20px;
 	right: 0;
 	top: 58px;
@@ -12,3 +12,5 @@
 .full-width-editor {
   width: 90%;
 }
+
+#preview { display: none; }

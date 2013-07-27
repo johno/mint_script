@@ -1,5 +1,9 @@
+$ ->
+  editor.initializeEditor($('#editor').data('content'))
+
 editor =
   initializeEditor: (content) ->
+    alert(content)
     editor.activateAce()
     editor.setEditorContent(content)
     editor.setEditorStyling()
@@ -8,7 +12,7 @@ editor =
   activateAce: ->
     ace.edit('editor').getSession()
 
-  setEditorContent: ->
+  setEditorContent: (content) ->
     ace.edit('editor').getSession().setValue(unescape(content))
 
   setEditorStyling: ->
@@ -26,7 +30,7 @@ editor =
     
     editor.setPreviewWithShowdown(converter)
     ace.edit('editor').getSession().on('change', ->
-      $().setPreviewWithShowdown(converter) )
+      editor.setPreviewWithShowdown(converter) )
 
   setPreviewWithShowdown: (converter) ->
     $('#preview').html(converter.makeHtml(ace.edit('editor').getValue()))
