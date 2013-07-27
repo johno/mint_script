@@ -1,5 +1,6 @@
 #editor {
 	position: absolute;
+  z-index: 5;
 	padding-top: 2px;
 	width: 100%;
 	left: 20px;
@@ -8,9 +9,3 @@
 	bottom: 40px;
 	height: 100%;
 }
-
-.full-width-editor {
-  width: 90%;
-}
-
-#preview { display: none; }
