@@ -12,8 +12,5 @@
     <%= yield %>
   </div>
   <% #= render partial: 'layouts/footer' %>
-  <%= render partial: 'js/initialize_editor', 
-                      formats: [:js], 
-                      locals: { script: @script } if controller_name == 'scripts' and @script %>
 </body>
 </html>

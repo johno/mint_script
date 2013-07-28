@@ -73,6 +73,22 @@ class ScriptsController < ApplicationController
     end
   end
 
+  def save
+    @script = Script.where(id: params[:id]).first
+    @script = Script.create!(user: current_user) unless @script
+
+    respond_to do |format|
+      if @script.update_attributes(params[:script])
+        format.html { redirect_to scripts_path, 
+                                  notice: "#{ @script.title || 'Your script' } was saved!" }
+        format.json { render :saved }
+      else
+        format.html { render action: :edit }
+        format.json { render json: @script.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # DELETE /scripts/1
   # DELETE /scripts/1.json
   def destroy

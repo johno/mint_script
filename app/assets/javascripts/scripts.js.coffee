@@ -3,7 +3,6 @@ $ ->
 
 editor =
   initializeEditor: (content) ->
-    alert(content)
     editor.activateAce()
     editor.setEditorContent(content)
     editor.setEditorStyling()
