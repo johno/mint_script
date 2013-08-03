@@ -1,27 +1,10 @@
-<h1>Listing scripts</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>User</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<h1>Your Scripts</h1>
 <% @scripts.each do |script| %>
-  <tr>
-    <td><%= script.title %></td>
-    <td><%= script.user_id %></td>
-    <td><%= script.content %></td>
-    <td><%= link_to 'Show', script %></td>
-    <td><%= link_to 'Edit', edit_script_path(script) %></td>
-    <td><%= link_to 'Destroy', script, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="script">
+    <div class="script-content js-escape" data-unescaped-js='<%= script.content%>'></div>
+    <%= link_to 'Show', script %>
+    <%= link_to 'Edit', edit_script_path(script) %>
+    <%= link_to 'Destroy', script, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 <% end %>
-</table>
-
-<br />
-
 <%= link_to 'New Script', new_script_path %>
