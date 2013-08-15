@@ -3,10 +3,12 @@ $ ->
 
 editor =
   initializeEditor: (content) ->
-    editor.activateAce()
-    editor.setEditorContent(content)
-    editor.setEditorStyling()
-    editor.initializeShowdown()
+    if $('#editor').length
+      alert('lololol')
+      editor.activateAce()
+      editor.setEditorContent(content)
+      editor.setEditorStyling()
+      editor.initializeShowdown()
 
   activateAce: ->
     ace.edit('editor').getSession()
