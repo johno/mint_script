@@ -89,6 +89,19 @@ class ScriptsController < ApplicationController
     end
   end
 
+  def private
+    @script = Script.find(params[:id])
+
+    respond_to do |format|
+      if @script.update_attribute(:private, !@script.is_private?)
+        format.html { redirect_to scripts_path, 
+                                  notice: "#{ @script.title || 'Your script' } is now #{ @script.is_private? ? :private : :public }!" }
+      else
+        raise "ScriptsController.private #{ @script.inspect } wtf?"
+      end
+    end
+  end
+
   # DELETE /scripts/1
   # DELETE /scripts/1.json
   def destroy

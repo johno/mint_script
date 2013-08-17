@@ -2,6 +2,7 @@ MintScript::Application.routes.draw do
   resources :scripts do
     member do
       put :save
+      put :private
     end
   end
   
