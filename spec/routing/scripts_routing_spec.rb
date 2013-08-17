@@ -12,11 +12,11 @@ describe ScriptsController do
     end
 
     it "routes to #show" do
-      get("/scripts/1").should route_to("scripts#show", :id => "1")
+      get("/scripts/1").should route_to("scripts#show", id: "1")
     end
 
     it "routes to #edit" do
-      get("/scripts/1/edit").should route_to("scripts#edit", :id => "1")
+      get("/scripts/1/edit").should route_to("scripts#edit", id: "1")
     end
 
     it "routes to #create" do
@@ -24,12 +24,19 @@ describe ScriptsController do
     end
 
     it "routes to #update" do
-      put("/scripts/1").should route_to("scripts#update", :id => "1")
+      put("/scripts/1").should route_to("scripts#update", id: "1")
     end
 
     it "routes to #destroy" do
-      delete("/scripts/1").should route_to("scripts#destroy", :id => "1")
+      delete("/scripts/1").should route_to("scripts#destroy", id: "1")
     end
 
+    it "routes to #private" do
+      put("/scripts/1/private").should route_to("scripts#private", id: "1")
+    end
+
+    it "routes to #save" do
+      put("/scripts/1/save").should route_to("scripts#save", id: "1")
+    end
   end
 end
