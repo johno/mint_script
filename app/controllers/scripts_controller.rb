@@ -1,5 +1,5 @@
 class ScriptsController < ApplicationController
-  before_filter :authenticate_user!, except: [:try]
+  # before_filter :authenticate_user!, except: [:try]
   
   # GET /scripts
   # GET /scripts.json
