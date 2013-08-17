@@ -1,10 +1,10 @@
 class ScriptsController < ApplicationController
-  # before_filter :authenticate_user!, except: [:try]
+  before_filter :authenticate_user!, only: [:edit, :update]
   
   # GET /scripts
   # GET /scripts.json
   def index
-    @scripts = Script.where('user_id IN (?)', current_user.id)
+    @scripts = current_user.scripts
 
     respond_to do |format|
       format.html # index.html.erb

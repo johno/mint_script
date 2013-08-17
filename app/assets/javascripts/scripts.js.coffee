@@ -4,7 +4,6 @@ $ ->
 editor =
   initializeEditor: (content) ->
     if $('#editor').length
-      alert('lololol')
       editor.activateAce()
       editor.setEditorContent(content)
       editor.setEditorStyling()

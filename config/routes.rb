@@ -7,9 +7,10 @@ MintScript::Application.routes.draw do
   end
   
   devise_for :users
-  resources :users, only: [] do
+  resources :users, only: [:show] do
     member do
-      get :following, :followers
+      get :following, action: :followed
+      get :followers
     end
   end
 
