@@ -18,6 +18,8 @@ gem 'sass-rails',   '~> 3.2.3'
 gem 'coffee-rails', '~> 3.2.1'
 gem 'uglifier', '>= 1.0.3'
 
+gem 'cancan'
+
 gem 'neat'
 gem 'bourbon'
 gem 'pure-sass', '0.0.2'

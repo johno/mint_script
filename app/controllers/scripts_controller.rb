@@ -1,5 +1,7 @@
 class ScriptsController < ApplicationController
   before_filter :authenticate_user!, only: [:edit, :update]
+  load_and_authorize_resource
+  skip_authorization_check only: [:try]
   
   # GET /scripts
   # GET /scripts.json
