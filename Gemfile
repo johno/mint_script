@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.0.3'
 
 gem 'cancan'
 
+gem 'carrierwave_direct'
+
 gem 'neat'
 gem 'bourbon'
 gem 'pure-sass', '0.0.2'
