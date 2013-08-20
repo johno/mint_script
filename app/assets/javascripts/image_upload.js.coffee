@@ -27,3 +27,5 @@ uploader =
 
   addImageToEditor: (imageUrl) ->
     ace.edit('editor').insert(("![](#{ imageUrl })"))
+
+# http://railscasts.com/episodes/381-jquery-file-upload

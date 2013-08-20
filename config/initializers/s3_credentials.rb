@@ -2,8 +2,6 @@ S3_BUCKET_NAME = ENV['S3_BUCKET_NAME']
 AWS_SECRET_ACCESS_KEY = ENV['AWS_SECRET_ACCESS_KEY']
 AWS_ACCESS_KEY = ENV['AWS_ACCESS_KEY']
 
-puts AWS_ACCESS_KEY.inspect
-
 CarrierWave.configure do |config|
   config.fog_credentials = {
     provider: "AWS",
