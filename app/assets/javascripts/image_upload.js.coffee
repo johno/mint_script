@@ -1,10 +1,11 @@
 $ ->
   uploader.dragAndDrop()
+  $('#script').fileupload
+    dataType: "script"
 
-uploader = 
+window.uploader = 
   dragAndDrop: ->
     $('#editor').on('dragenter', (e) -> 
-      # console.log(e)
       e.preventDefault() 
       e.stopPropagation() )
     $('#editor').on('dragexit', (e) -> 

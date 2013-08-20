@@ -1,8 +1,8 @@
-<%= form_for(@script, remote: true, html: { class: 'form' }) do |f| %>
+<%= form_for(@script, remote: true, html: { class: 'form', id: :script }) do |f| %>
   <%= f.hidden_field :content, id: 'content-field' %>
   <%= f.hidden_field :file_type, id: 'file-type-field' %>
   <%= f.hidden_field :user_id, value: @user.nil? ? nil : @user.id %>
-  <%= f.file_field :image, id: 'image-field' %>
+  <%= f.file_field :image %>
 <% end %>
 
 <%= render partial: 'layouts/editor' %>

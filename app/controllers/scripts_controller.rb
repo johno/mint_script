@@ -71,6 +71,7 @@ class ScriptsController < ApplicationController
       else
         format.html { render action: :edit }
         format.json { render json: @script.errors, status: :unprocessable_entity }
+        format.js { render :image_added }
       end
     end
   end
