@@ -30,6 +30,7 @@ gem 'font-awesome-sass-rails'
 gem 'devise'
 gem 'thin'
 
+gem 'jquery-fileupload-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
