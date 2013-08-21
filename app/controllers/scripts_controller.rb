@@ -68,10 +68,10 @@ class ScriptsController < ApplicationController
       if @script.update_attributes(params[:script])
         format.html { redirect_to @script }
         format.json { head :no_content }
+        format.js { render :image_added }
       else
         format.html { render action: :edit }
         format.json { render json: @script.errors, status: :unprocessable_entity }
-        format.js { render :image_added }
       end
     end
   end

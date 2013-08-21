@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130820020416) do
+ActiveRecord::Schema.define(:version => 20130821001546) do
+
+  create_table "images", :force => true do |t|
+    t.string   "name"
+    t.integer  "script_id"
+    t.string   "filename"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"

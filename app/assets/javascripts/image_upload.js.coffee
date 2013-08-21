@@ -2,6 +2,7 @@ $ ->
   uploader.dragAndDrop()
   $('#script').fileupload
     dataType: "script"
+    dropZone: $('#editor')
 
 window.uploader = 
   dragAndDrop: ->
@@ -21,10 +22,7 @@ window.uploader =
       if e.originalEvent && e.originalEvent.dataTransfer && e.originalEvent.dataTransfer.files
         file = e.originalEvent.dataTransfer.files[0]
         reader = new FileReader()
-
-      reader.onloadend = ->
-        uploader.addImageToEditor(reader.result)
-      reader.readAsDataURL(file) )
+        reader.readAsDataURL(file) )
 
   addImageToEditor: (imageUrl) ->
     ace.edit('editor').insert(("![](#{ imageUrl })"))
