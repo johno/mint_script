@@ -2,7 +2,7 @@ class Script < ActiveRecord::Base
   belongs_to :user
   has_many :images
 
-  attr_accessible :content, :title, :user_id, :file_type, :image
+  attr_accessible :content, :title, :user_id, :file_type
 
   def is_private?
     is_private

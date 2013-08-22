@@ -63,28 +63,12 @@ class ScriptsController < ApplicationController
       if @script.update_attributes(params[:script])
         format.html { redirect_to @script }
         format.json { head :no_content }
-        format.js { render :image_added }
       else
         format.html { render action: :edit }
         format.json { render json: @script.errors, status: :unprocessable_entity }
       end
     end
   end
-
-=begin
-  def create_new_image
-    @script = Script.find(params[:id])
-
-    respond_to do |format|
-      if @script.update_attributes(params[:script])
-        @script.images.create!(data_file: @script.image_url)
-        format.js { render :image_added }
-      else
-        raise("WTF????????")
-      end
-    end
-  end
-=end
 
   def save
     @script = Script.where(id: params[:id]).first

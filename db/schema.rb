@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130822001001) do
+ActiveRecord::Schema.define(:version => 20130822025450) do
 
   create_table "images", :force => true do |t|
     t.string   "data_file"
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(:version => 20130822001001) do
     t.datetime "updated_at", :null => false
     t.integer  "file_type"
     t.boolean  "is_private"
-    t.string   "image"
   end
 
   create_table "users", :force => true do |t|
