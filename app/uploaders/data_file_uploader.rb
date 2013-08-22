@@ -2,8 +2,14 @@
 
 class DataFileUploader < CarrierWave::Uploader::Base
 
-  #include CarrierWaveDirect::Uploader
   storage :fog
+
+  # Make heroku happy.
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
+  end
+
+  # include CarrierWaveDirect::Uploader
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
