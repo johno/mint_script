@@ -32,6 +32,7 @@ class Ability
       can :read, :all
       can :manage, Script, user_id: nil
     else
+      can :manage, Image, user: user
       can :manage, Script, user_id: user.id
       can :manage, User, id: user.id
       can :read, :all

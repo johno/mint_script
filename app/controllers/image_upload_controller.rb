@@ -1,3 +1,0 @@
-class ImageUploadController < ApplicationController
-  
-end

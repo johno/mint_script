@@ -28,13 +28,8 @@ class ScriptsController < ApplicationController
   # GET /scripts/new
   # GET /scripts/new.json
   def new
-    @script = Script.new
-    @user = current_user
-    
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @script }
-    end
+    @script = Script.create!(user_id: current_user.id)
+    redirect_to edit_script_path(@script)
   end
 
   # GET /scripts/1/edit
@@ -75,6 +70,21 @@ class ScriptsController < ApplicationController
       end
     end
   end
+
+=begin
+  def create_new_image
+    @script = Script.find(params[:id])
+
+    respond_to do |format|
+      if @script.update_attributes(params[:script])
+        @script.images.create!(data_file: @script.image_url)
+        format.js { render :image_added }
+      else
+        raise("WTF????????")
+      end
+    end
+  end
+=end
 
   def save
     @script = Script.where(id: params[:id]).first

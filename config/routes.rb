@@ -5,6 +5,8 @@ MintScript::Application.routes.draw do
       put :private
     end
   end
+
+  resources :images
   
   devise_for :users
   resources :users, only: [:show] do

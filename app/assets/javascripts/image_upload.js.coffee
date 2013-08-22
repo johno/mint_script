@@ -1,6 +1,6 @@
 $ ->
   uploader.dragAndDrop()
-  $('#script').fileupload
+  $('#image').fileupload
     dataType: "script"
     dropZone: $('#editor')
 

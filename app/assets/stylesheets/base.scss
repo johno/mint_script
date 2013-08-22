@@ -8,6 +8,8 @@ $padding: 20px;
 .pull-right { float: right; }
 .pull-left { float: left; }
 
+.hidden { display: none; }
+
 @mixin border($borderColor: $accentColor) {
   border-top: thin solid darken($borderColor, 5%);
   border-bottom: thin solid lighten($borderColor, 15%);
