@@ -31,12 +31,13 @@ class Ability
     if user.nil?
       can :read, :all
       can :manage, Script, user_id: nil
-      can :read, Script, is_private: nil
+      cannot :read, Script, is_private: true
     else
+      can :read, :all
       can :manage, Image, user: user
+      cannot :manage, Script, is_private: true
       can :manage, Script, user_id: user.id
       can :manage, User, id: user.id
-      can :read, :all
       can [:followers, :followed], User
     end
   end
