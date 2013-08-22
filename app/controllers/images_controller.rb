@@ -3,16 +3,9 @@ class ImagesController < ApplicationController
   
   def create
     @image = Image.new(params[:image])
-    puts params[:image].inspect
-    puts @image.inspect
-    @image.save!
-    #params[:image].delete(:script_id)
-
-    @image.update_attributes(name: :lol)
 
     respond_to do |format|
-      puts :doing_update_attrs
-      if true #@image.update_attributes(params[:image])
+      if @image.save
         format.js { render 'scripts/image_added' }
       else
         raise('wtf????')

@@ -3,5 +3,7 @@ $ ->
 
 escape =
   escapeJs: ->
+    converter = new Showdown.converter()
+    
     $('.js-escape').each( ->
-      $(this).html(unescape($(this).data('unescaped-js'))) )
+      $(this).html(converter.makeHtml(unescape($(this).data('unescaped-js')))) )
