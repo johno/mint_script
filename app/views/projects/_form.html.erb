@@ -1,0 +1,9 @@
+<%= form_for(@project, html: { class: :form, id: :project }) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.fields_for :folders do |b| %>
+    <%= b.text_field :name, placeholder: 'Folder Name' %>
+    <%= b.hidden_field :project_id, value: @project.id
+  <% end %>
+  <%= f.submit 'Create Project' %>
+<% end %>
