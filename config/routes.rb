@@ -1,13 +1,4 @@
 MintScript::Application.routes.draw do
-  resources :scripts do
-    member do
-      put :save
-      put :private
-    end
-  end
-
-  resources :images
-  
   devise_for :users
   resources :users, only: [:show] do
     member do
@@ -15,6 +6,16 @@ MintScript::Application.routes.draw do
       get :followers
     end
   end
+
+  resources :scripts do
+    member do
+      put :save
+      put :private
+    end
+  end
+
+  resources :projects
+  resources :images
 
   root to: 'static_pages#home'
   match '/try' => 'scripts#try', via: [:get]

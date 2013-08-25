@@ -39,6 +39,7 @@ class Ability
       can :manage, Script, user_id: user.id
       can :manage, User, id: user.id
       can [:followers, :followed], User
+      can :manage, Project, user_id: user.id
     end
   end
 end

@@ -2,8 +2,26 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
 
+  def index
+    @projects = current_user.projects
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @projects }
+    end
+  end
+
+  def show
+    @project = Project.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @project }
+    end
+  end
+
   def new
-    @project = Project.new(user: current_user)
+    @project = Project.new(user_id: current_user.id)
 
     respond_to do |format|
       format.html

@@ -4,5 +4,5 @@ class Project < ActiveRecord::Base
   has_many :scripts, through: :folders
   belongs_to :user
 
-  attr_accessible :name
+  attr_accessible :name, :user_id
 end
