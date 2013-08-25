@@ -1,2 +1,2 @@
-<%= user.email %><br>
+<%= link_to user.email, user_path(user) %><br>
 <%= current_user.following?(user) ? unfollow_link(user.id) : follow_link(user.id) %>
