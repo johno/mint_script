@@ -1,8 +1,8 @@
 User:
 <%= @user.email %>
-<br />
+<br><br>
 Following:
-<%= render partial: 'followed', object: @user, as: :user %>
-<br />
+<%= render @user.followed_users %>
+<br>
 Followers:
-<%= render partial: 'followers', object: @user, as: :user %>
+<%= render @user.followers %>
