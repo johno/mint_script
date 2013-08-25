@@ -11,11 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130822025450) do
+ActiveRecord::Schema.define(:version => 20130825184933) do
+
+  create_table "folders", :force => true do |t|
+    t.string   "name"
+    t.integer  "project_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "images", :force => true do |t|
     t.string   "data_file"
     t.integer  "script_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "projects", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -40,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20130822025450) do
     t.datetime "updated_at", :null => false
     t.integer  "file_type"
     t.boolean  "is_private"
+    t.integer  "folder_id"
   end
 
   create_table "users", :force => true do |t|
