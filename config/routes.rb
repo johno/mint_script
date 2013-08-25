@@ -1,6 +1,6 @@
 MintScript::Application.routes.draw do
   devise_for :users
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :index] do
     member do
       get :following, action: :followed
       get :followers
@@ -14,6 +14,7 @@ MintScript::Application.routes.draw do
     end
   end
 
+  resources :relationships, only: [:create, :destroy]
   resources :projects
   resources :images
 

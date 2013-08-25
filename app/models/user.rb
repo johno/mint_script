@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :followed_users, through: :relationships, source: :followed
 
   def following?(other_user)
-    relationships.find_by(followed_id: other_user.id)
+    relationships.where(followed_id: other_user.id).any?
   end
 
   def follow!(other_user)
@@ -23,6 +23,6 @@ class User < ActiveRecord::Base
   end
 
   def unfollow!(other_user)
-    relationships.find_by(followed_id: other_user.id).destroy!
+    relationships.where(followed_id: other_user.id).first.destroy
   end
 end
