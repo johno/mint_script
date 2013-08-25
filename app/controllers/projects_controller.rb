@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new(user_id: current_user.id)
-
+    @project.folders.build
     respond_to do |format|
       format.html
       format.js { raise :lol }
