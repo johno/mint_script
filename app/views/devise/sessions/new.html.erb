@@ -2,7 +2,7 @@
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'pure-form' }) do |f| %>
     <fieldset class='pure-group'>
       <%= f.text_field :email, autofocus: true, label: false, placeholder: :Email, class: 'pure-input-1-1' %>
-      <%= f.text_field :password, label: false, placeholder: :Password, class: 'pure-input-1-1' %>
+      <%= f.password_field :password, label: false, placeholder: :Password, class: 'pure-input-1-1' %>
       <%= f.submit "Sign in to mintscript", class: 'pure-button pure-input-1-1 pure-button-primary', id: :submit %>
     </fieldset>
   <% end %>
