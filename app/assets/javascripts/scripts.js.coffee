@@ -8,6 +8,7 @@ editor =
       editor.setEditorContent(content)
       editor.setEditorStyling()
       editor.initializeShowdown()
+      editor.addShortcuts()
 
   activateAce: ->
     ace.edit('editor').getSession()
@@ -25,8 +26,9 @@ editor =
     ace.edit('editor').setHighlightActiveLine(false)
     ace.edit('editor').setShowPrintMargin(false)
 
+  addShortcuts: ->
     ace.edit('editor').commands.addCommand
-      name: 'myCommand'
+      name: 'togglePreview'
       bindKey: {win: 'Ctrl-M',  mac: 'Command-P'}
       exec: ->
         column.toggleColumns()
