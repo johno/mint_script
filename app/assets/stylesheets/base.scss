@@ -1,6 +1,7 @@
 @import 'bourbon';
 
 * { box-sizing: border-box; }
+body, header .pure-menu.pure-menu-open { background-color: #f3f3f3; }
 
 $accentColor: #34D0B6;
 $padding: 20px;
@@ -40,3 +41,22 @@ $padding: 20px;
 .pure-input-1-1 { width: 100%; }
 .pure-button.pure-input-1-1 { box-shadow: none; border: none; }
 .tons-of-margin-on-top { margin-top: 20%; }
+
+.help-links { margin-top: 40px; }
+.help-links a { letter-spacing: 1px; text-decoration: none; color: #999; &:hover { color: #777; } font-variant: small-caps; }
+
+input { font-weight: 100; letter-spacing: 1px; }
+
+input {
+  background-color: transparent;
+  border: 0;
+  color: #333;
+  outline: 0;
+  padding: 8px 0;
+  resize: none;
+}
+
+input + input { border-top: thin solid #ddd; }
+#submit { margin: 40px 0 0 0; color: #999; }
+
+.ace-tomorrow .ace_scroller { background: transparent !important; }

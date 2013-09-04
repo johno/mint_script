@@ -24,6 +24,7 @@ editor =
     ace.edit('editor').getSession().setUseWrapMode(true)
     ace.edit('editor').setHighlightActiveLine(false)
     ace.edit('editor').setShowPrintMargin(false)
+    ace.edit('editor')
 
   initializeShowdown: ->
     converter = new Showdown.converter()
