@@ -24,7 +24,13 @@ editor =
     ace.edit('editor').getSession().setUseWrapMode(true)
     ace.edit('editor').setHighlightActiveLine(false)
     ace.edit('editor').setShowPrintMargin(false)
-    ace.edit('editor')
+
+    ace.edit('editor').commands.addCommand
+      name: 'myCommand'
+      bindKey: {win: 'Ctrl-M',  mac: 'Command-P'}
+      exec: ->
+        column.toggleColumns()
+      readOnly: false
 
   initializeShowdown: ->
     converter = new Showdown.converter()

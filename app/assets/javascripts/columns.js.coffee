@@ -1,7 +1,7 @@
 $ ->
   column.bindToColumnsButton()
 
-column =
+window.column =
   bindToColumnsButton: ->
     $('#columns').on('click', ->
       column.toggleColumns() )
