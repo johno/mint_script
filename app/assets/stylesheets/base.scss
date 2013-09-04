@@ -1,7 +1,8 @@
 @import 'bourbon';
 
+$bg-color: #f3f3f3;
 * { box-sizing: border-box; }
-body, header .pure-menu.pure-menu-open { background-color: #f3f3f3; }
+body, header .pure-menu.pure-menu-open { background-color: $bg-color; }
 
 $accentColor: #34D0B6;
 $padding: 20px;
@@ -60,3 +61,4 @@ input + input { border-top: thin solid #ddd; }
 #submit { margin: 40px 0 0 0; color: #999; }
 
 .ace-tomorrow .ace_scroller { background: transparent !important; }
+#preview { background-color: $bg-color; z-index: 100; }
