@@ -46,8 +46,8 @@ editor =
 
     $('#preview').html(theHtml)
     barCharts = theHtml.match(/{{(bar_chart.*?)}}/g)
-    editor.replacePreviewContentWithBarChart(barChart) for barChart in barCharts
+    editor.replaceContentWithBarChart($('#preview'), barChart) for barChart in barCharts
 
-  replacePreviewContentWithBarChart: (barChart) ->
-    theHtml = $('#preview').html()
-    $('#preview').html(theHtml.replace(new RegExp(barChart, "g"), "$$Bar chart functionality coming soon!$$"))
+  replaceContentWithBarChart: (content, barChart) ->
+    theHtml = content.html()
+    content.html(theHtml.replace(new RegExp(barChart, "g"), "$Bar chart functionality coming soon!$"))
