@@ -42,4 +42,12 @@ editor =
       editor.setPreviewWithShowdown(converter) )
 
   setPreviewWithShowdown: (converter) ->
-    $('#preview').html(converter.makeHtml(ace.edit('editor').getValue()))
+    theHtml = converter.makeHtml(ace.edit('editor').getValue())
+
+    $('#preview').html(theHtml)
+    barCharts = theHtml.match(/{{(bar_chart.*?)}}/g)
+    editor.replacePreviewContentWithBarChart(barChart) for barChart in barCharts
+
+  replacePreviewContentWithBarChart: (barChart) ->
+    theHtml = $('#preview').html()
+    $('#preview').html(theHtml.replace(new RegExp(barChart, "g"), "Bar chart functionality coming soon!"))
