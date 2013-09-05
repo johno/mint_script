@@ -43,11 +43,12 @@ editor =
 
   setPreviewWithShowdown: (converter) ->
     thePreview = $('#preview')
+    theBarChartRegex = /{{(bar_chart.*?)}}/g
     theHtml = converter.makeHtml(ace.edit('editor').getValue())
 
     thePreview.html(theHtml)
-    barCharts = theHtml.match(/{{(bar_chart.*?)}}/g)
-    editor.replaceContentWithBarChart(thePreview, barChart) for barChart in barCharts
+    theBarCharts = theHtml.match(theBarChartRegex)
+    editor.replaceContentWithBarChart(thePreview, barChart) for barChart in theBarCharts
 
   replaceContentWithBarChart: (content, barChart) ->
     theHtml = content.html()
