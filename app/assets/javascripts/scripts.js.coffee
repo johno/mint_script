@@ -50,4 +50,4 @@ editor =
 
   replacePreviewContentWithBarChart: (barChart) ->
     theHtml = $('#preview').html()
-    $('#preview').html(theHtml.replace(new RegExp(barChart, "g"), "Bar chart functionality coming soon!"))
+    $('#preview').html(theHtml.replace(new RegExp(barChart, "g"), "$$Bar chart functionality coming soon!$$"))
