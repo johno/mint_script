@@ -39,7 +39,8 @@ editor =
     
     editor.setPreviewWithShowdown(converter)
     ace.edit('editor').getSession().on('change', ->
-      editor.setPreviewWithShowdown(converter) )
+      editor.setPreviewWithShowdown(converter)
+      save.doSave() )
 
   setPreviewWithShowdown: (converter) ->
     thePreview = $('#preview')
@@ -48,8 +49,10 @@ editor =
 
     thePreview.html(theHtml)
     theBarCharts = theHtml.match(theBarChartRegex)
+    return unless theBarCharts && theBarCharts.length
     editor.replaceContentWithBarChart(thePreview, barChart) for barChart in theBarCharts
 
   replaceContentWithBarChart: (content, barChart) ->
     theHtml = content.html()
     content.html(theHtml.replace(new RegExp(barChart, "g"), "$Bar chart functionality coming soon!$"))
+
