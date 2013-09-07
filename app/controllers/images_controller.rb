@@ -12,4 +12,13 @@ class ImagesController < ApplicationController
       end
     end
   end
+
+  def index
+    @images = current_user.images.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @images }
+    end
+  end
 end
