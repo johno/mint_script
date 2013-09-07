@@ -1,4 +1,8 @@
-<%= render partial: 'script', locals: { script: @script } %>
+<div class="pure-g-r pure-center">
+  <div class='pure-u-1-2 script'>
+    <%= render @script %>
 
-<%= link_to 'Edit Script', edit_script_path(@script), class: 'button button-primary' if can?(:manage, Script) %>
-<%= link_to 'See All Scripts', scripts_path, class: 'button' %>
+    <%= link_to 'Edit Script', edit_script_path(@script), class: 'button button-primary' if can?(:manage, Script) %>
+    <%= link_to 'See All Scripts', scripts_path, class: 'button' %>
+  </div>
+</div>
