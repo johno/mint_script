@@ -8,3 +8,4 @@ window.column =
 
   toggleColumns: ->
     $('#editor').toggleClass('two-columns')
+    $('#preview').toggleClass('hidden')

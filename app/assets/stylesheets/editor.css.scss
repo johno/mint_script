@@ -4,8 +4,8 @@ $bg-color: #f3f3f3;
 	position: absolute;
   z-index: 5;
 	padding-top: 2px;
-	width: 100%;
-	left: 20px;
+	width: 50%;
+	left: 25%;
 	right: 0;
 	top: 58px;
 	bottom: 40px;
@@ -13,4 +13,7 @@ $bg-color: #f3f3f3;
   background-color: $bg-color;
 }
 
-#editor.two-columns { width: 45%; }
+#editor.two-columns { left: 2%; width: 45%; }
+.ace_content.two-columns { width: 90% !important; }
+
+.hidden { display: none; }

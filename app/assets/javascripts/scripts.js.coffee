@@ -23,13 +23,13 @@ editor =
     ace.edit('editor').getSession().setTabSize(2)
     ace.edit('editor').getSession().setUseSoftTabs(true)
     ace.edit('editor').getSession().setUseWrapMode(true)
-    ace.edit('editor').setHighlightActiveLine(false)
+    ace.edit('editor').setHighlightActiveLine(true)
     ace.edit('editor').setShowPrintMargin(false)
 
   addShortcuts: ->
     ace.edit('editor').commands.addCommand
       name: 'togglePreview'
-      bindKey: {win: 'Ctrl-M',  mac: 'Command-P'}
+      bindKey: {win: 'Ctrl-P',  mac: 'Command-P'}
       exec: ->
         column.toggleColumns()
       readOnly: false
