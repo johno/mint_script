@@ -1,4 +1,4 @@
 window.save =
   doSave: ->
-    $('#content-field').val(escape(ace.edit("editor").getValue()))
+    $('#content-field').val(ace.edit("editor").getValue())
     $('#script').submit()
