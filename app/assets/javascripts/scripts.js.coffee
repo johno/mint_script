@@ -28,10 +28,17 @@ editor =
 
   addShortcuts: ->
     ace.edit('editor').commands.addCommand
-      name: 'togglePreview'
-      bindKey: {win: 'Ctrl-P',  mac: 'Command-P'}
+      name: 'togglePreview2'
+      bindKey: {win: 'Ctrl-2',  mac: 'Command-2'}
       exec: ->
-        column.toggleColumns()
+        column.toggleColumns(2)
+      readOnly: false
+
+    ace.edit('editor').commands.addCommand
+      name: 'togglePreview1'
+      bindKey: {win: 'Ctrl-1',  mac: 'Command-1'}
+      exec: ->
+        column.toggleColumns(1)
       readOnly: false
 
   initializeShowdown: ->
