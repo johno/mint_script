@@ -9,11 +9,6 @@
           <%= link_with_icon path: try_path, icon: :leaf %>
         <% end %>
       </li>
-      <% if @script %>
-        <li>
-          <%= link_with_icon path: '#', icon: :columns, id: :columns %>
-        </li>
-      <% end %>
       <li>
         <% if current_user %>
           <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout %>
