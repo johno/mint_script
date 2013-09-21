@@ -1,7 +1,7 @@
 <h1>Scripts</h1>
 <% @scripts.each do |script| %>
-  <div class="script">
-    <div class="script-content js-escape" data-unescaped-js='<%= script.content %>'></div>
+  <div class="script" id="script-<%= script.id %>">
+    <%= edit_script_title(script) %>
     <%= link_to_if(script.user, script.user.email, user_path(script.user)) %>
     <%= link_to 'Show', script %>
     <%= link_to 'Edit', edit_script_path(script) %>
