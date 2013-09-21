@@ -3,7 +3,8 @@ $ ->
 
 sessy_form = 
   hideSubmitButton: ->
-    $('.sessy_form input:submit').hide()
+    unless $('#password').val().length and $('#email').val().length
+      $('.sessy_form input:submit').hide()
 
   bindToFormEvents: ->
     $('#password').keyup ->
