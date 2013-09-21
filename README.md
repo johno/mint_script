@@ -1,2 +1,2 @@
-mint_script
+He who is not yet named.
 ===========
