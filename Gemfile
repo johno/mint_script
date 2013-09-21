@@ -36,3 +36,5 @@ gem 'rmagick'
 gem 'fog'
 gem 'carrierwave_direct'
 gem 'sidekiq'
+
+gem 'gravatar_image_tag'
