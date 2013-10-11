@@ -21,6 +21,9 @@ class ScriptsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @script }
+      format.pdf { render pdf: "#{ @script.id }", 
+                          layout: false,
+                          template: 'scripts/show.pdf.erb' }
     end
   end
 

@@ -38,3 +38,6 @@ gem 'carrierwave_direct'
 gem 'sidekiq'
 
 gem 'gravatar_image_tag'
+
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
