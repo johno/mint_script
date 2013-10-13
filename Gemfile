@@ -39,5 +39,6 @@ gem 'sidekiq'
 
 gem 'gravatar_image_tag'
 
+gem 'redcarpet'
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
