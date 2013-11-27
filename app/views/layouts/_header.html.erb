@@ -1,23 +1,25 @@
 <header>
   <div class='pure-menu pure-menu-open pure-menu-horizontal'>
-    <%= @script ? 
-          edit_script_title(@script) : 
-          link_to('mintscript', root_path, class: 'pure-menu-heading') %>
-    <ul class='pull-right' >
-      <li>
-        <% if current_user %>
-          <%= link_with_icon path: scripts_path, icon: 'folder-open-alt' %>
-        <% else %>
-          <%= link_with_icon path: try_path, icon: :leaf %>
-        <% end %>
-      </li>
-      <li>
-        <% if current_user %>
-          <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout %>
-        <% else %>
-          <%= link_with_icon path: new_user_session_path, icon: :signin %>
-        <% end %>
-      </li>
-    </ul>
+    <% if @script %>
+      <%= edit_script_title(@script) %>
+    <% else %>
+      <%= link_to('mintscript', root_path, class: 'pure-menu-heading') %>
+      <ul class='pull-right' >
+        <li>
+          <% if current_user %>
+            <%= link_with_icon path: scripts_path, icon: 'folder-open-alt' %>
+          <% else %>
+            <%= link_with_icon path: try_path, icon: :leaf %>
+          <% end %>
+        </li>
+        <li>
+          <% if current_user %>
+            <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout %>
+          <% else %>
+            <%= link_with_icon path: new_user_session_path, icon: :signin %>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
   </div>
 </header>
