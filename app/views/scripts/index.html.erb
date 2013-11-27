@@ -2,10 +2,11 @@
 <% @scripts.each do |script| %>
   <div class="script" id="script-<%= script.id %>">
     <%= edit_script_title(script) %>
-    <%= link_to_if(script.user, script.user.email, user_path(script.user)) %>
+    <%= link_to(script.user.email, user_path(script.user)) if @all_scripts && script.user %>
     <%= link_to 'Show', script %>
     <%= link_to 'Edit', edit_script_path(script) %>
     <%= link_to 'Destroy', script, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 <% end %>
-<%= link_to 'New Script', new_script_path %>
+<br>
+<%= link_to 'Create a New Script', new_script_path, class: 'pure-button pure-button-primary' %>
