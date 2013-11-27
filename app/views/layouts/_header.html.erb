@@ -1,6 +1,6 @@
 <header>
   <div class='pure-menu pure-menu-open pure-menu-horizontal'>
-    <% if @script %>
+    <% if @script and action_name == 'edit' %>
       <%= edit_script_title(@script) %>
     <% else %>
       <%= link_to('mintscript', root_path, class: 'pure-menu-heading') %>
