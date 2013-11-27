@@ -4,5 +4,6 @@ path_to_wkhtmltopdf = Rails.env.production? ?
 
 
 WickedPdf.config = {
-  :exe_path => path_to_wkhtmltopdf
+  exe_path: path_to_wkhtmltopdf,
+  wkhtmltopdf: path_to_wkhtmltopdf
 }
