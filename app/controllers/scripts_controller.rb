@@ -5,7 +5,7 @@ class ScriptsController < ApplicationController
   # GET /scripts
   # GET /scripts.json
   def index
-    @scripts = current_user.scripts
+    @scripts = current_user.scripts.order('updated_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,6 +26,11 @@ class ScriptsController < ApplicationController
                           layout: false,
                           template: 'scripts/show.pdf.erb' }
     end
+  end
+
+  def html
+    @script = Script.find(params[:id])
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
   end
 
   # GET /scripts/new
@@ -64,7 +69,7 @@ class ScriptsController < ApplicationController
 
     respond_to do |format|
       if @script.update_attributes(params[:script])
-        format.html { redirect_to @script }
+        format.html { redirect_to scripts_path }
         format.json { head :no_content }
       else
         format.html { render action: :edit }

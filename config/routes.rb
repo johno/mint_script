@@ -11,6 +11,7 @@ MintScript::Application.routes.draw do
     member do
       put :save
       put :private
+      get :html
     end
   end
 

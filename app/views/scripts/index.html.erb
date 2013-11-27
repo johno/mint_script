@@ -3,9 +3,12 @@
   <div class="script" id="script-<%= script.id %>">
     <%= edit_script_title(script) %>
     <%= link_to(script.user.email, user_path(script.user)) if @all_scripts && script.user %>
-    <%= link_to 'Show', script %>
-    <%= link_to 'Edit', edit_script_path(script) %>
-    <%= link_to 'Destroy', script, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'SHOW', script %>
+    <%= link_to 'EDIT', edit_script_path(script) %>
+    <%= link_to 'PDF', script_path(script, format: :pdf) %>
+    <%= link_to 'GENERATE HTML', html_script_path(script) %>
+    <%= link_to 'DELETE', script, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= make_public_or_private(script) %>
   </div>
 <% end %>
 <br>

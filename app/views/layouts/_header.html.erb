@@ -1,6 +1,8 @@
 <header>
   <div class='pure-menu pure-menu-open pure-menu-horizontal'>
-    <%= link_to 'mintscript', root_path, class: 'pure-menu-heading' %>
+    <%= @script ? 
+          edit_script_title(@script) : 
+          link_to('mintscript', root_path, class: 'pure-menu-heading') %>
     <ul class='pull-right' >
       <li>
         <% if current_user %>
