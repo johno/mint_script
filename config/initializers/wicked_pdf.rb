@@ -1,3 +1,8 @@
+path_to_wkhtmltopdf = Env.production? ?
+  Rails.root.join('bin', 'wkhtmltopdf-amd64').to_s :
+  '/Users/johno/.rvm/gems/ruby-2.0.0-p353/bin/wkhtmltopdf'
+
+
 WickedPdf.config = {
-  :exe_path => '/Users/johno/.rvm/gems/ruby-2.0.0-p0/bin/wkhtmltopdf'
+  :exe_path => path_to_wkhtmltopdf
 }
