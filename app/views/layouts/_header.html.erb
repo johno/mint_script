@@ -1,7 +1,9 @@
 <header>
   <div class='pure-menu pure-menu-open pure-menu-horizontal'>
     <% if @script and action_name == 'edit' %>
-      <%= edit_script_title(@script) %>
+      <div class='pure-u-1 pure-center room-on-left'>
+        <%= edit_script_title(@script) %>
+      </div>
     <% else %>
       <%= link_to('mintscript', root_path, class: 'pure-menu-heading') %>
       <ul class='pull-right' >

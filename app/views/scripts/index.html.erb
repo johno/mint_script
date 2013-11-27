@@ -4,7 +4,7 @@
     <% @scripts.each do |script| %>
       <div class='script-wrapper'>
         <div class="pure-u-1-2 pull-left">
-          <%= link_to script.title, script, class: 'pure-button pure-button-primary' %>
+          <%= link_to script.title || 'Untitled Script', script, class: 'pure-button pure-button-primary script-title' %>
         </div>
         <%= div_for(script, class: 'script-actions pull-right pure-u-1-2 right-my-children') do %>
           <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_script_path(script), class: 'pure-button' %>

@@ -2,14 +2,18 @@
 	position: absolute;
 	padding-top: 2px;
 	
-	width: 45%;
+	width: 50%;
 	height: 100%;
 	left: 50%;
-	right: 20px;
+	right: 0;
 	top: 48px;
 	bottom: 40px;
 	word-wrap: break-word;
 	overflow: scroll;
+	background-color: #fafafa;
 
 	img { width: 100%; }
+	border-top: thin solid #d6d6d6;
+	border-left: thin solid #ddd;
+	padding: 20px;
 }

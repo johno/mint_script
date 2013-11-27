@@ -34,9 +34,12 @@ form { display: inline-block; }
   @include cake-layer;
 }
 
-.script-wrapper { height: 55px; border-bottom: thin solid #ddd; }
+.script-wrapper { min-height: 55px; border-bottom: thin solid #ddd; }
+.script-actions { min-width: 200px; }
 
 .right-my-children { text-align: right; }
+
+header .room-on-left { margin-left: 2%; }
 
 .pure-g-r > .pure-u, .pure-g-r > [class *="pure-u-"] { padding: 5px; text-align: left; }
 .pure-g-r .pure-center { text-align: center; }
