@@ -1,15 +1,21 @@
-<h1>Scripts</h1>
-<% @scripts.each do |script| %>
-  <div class="script" id="script-<%= script.id %>">
-    <%= edit_script_title(script) %>
-    <%= link_to(script.user.email, user_path(script.user)) if @all_scripts && script.user %>
-    <%= link_to 'SHOW', script %>
-    <%= link_to 'EDIT', edit_script_path(script) %>
-    <%= link_to 'PDF', script_path(script, format: :pdf) %>
-    <%= link_to 'GENERATE HTML', html_script_path(script) %>
-    <%= link_to 'DELETE', script, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= make_public_or_private(script) %>
+<div class='pure-center'>
+  <div class='pure-u-7-8'>
+    <h1>Your scripts</h1>
+    <% @scripts.each do |script| %>
+      <div class='script-wrapper'>
+        <div class="pure-u-1-2 pull-left">
+          <%= link_to script.title, script, class: 'pure-button pure-button-primary' %>
+        </div>
+        <%= div_for(script, class: 'script-actions pull-right pure-u-1-2 right-my-children') do %>
+          <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_script_path(script), class: 'pure-button' %>
+          <%= link_to '<i class="icon-file"></i>'.html_safe, script_path(script, format: :pdf), class: 'pure-button' %>
+          <%= link_to '<i class="icon-trash"></i>'.html_safe, script, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pure-button' %>
+        <% end %>
+      <div class='clear'></div>
+      </div>
+      <br>
+    <% end %>
+    <br>
+    <%= link_to '<i class="icon-plus"></i> &nbsp; Create a New Script'.html_safe, new_script_path, class: 'pure-button' %>
   </div>
-<% end %>
-<br>
-<%= link_to 'Create a New Script', new_script_path, class: 'pure-button pure-button-primary' %>
+</div>

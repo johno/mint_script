@@ -8,8 +8,10 @@
 </head>
 <body>
   <%= render partial: 'layouts/header' %>
-  <div id="main-content">
-    <%= yield %>
+  <div id="main-content" class='pure-g-r'>
+    <div class='pure-u-1'>
+      <%= yield %>
+    </div>
   </div>
 </body>
 </html>

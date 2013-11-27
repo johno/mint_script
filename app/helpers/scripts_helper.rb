@@ -10,7 +10,7 @@ module ScriptsHelper
     form_for(script) do |f|
       capture do
         concat f.hidden_field(:is_private, value: script.is_private? ? false : true)
-        concat f.submit script.is_private? ? 'Make Public' : 'Make Private', class: 'pure-button'
+        concat f.submit "#{script.is_private? ? 'MAKE PUBLIC' : 'MAKE PRIVATE'}", class: 'pure-button'
       end
     end.html_safe
   end

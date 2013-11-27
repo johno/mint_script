@@ -6,9 +6,7 @@
       <%= link_to('mintscript', root_path, class: 'pure-menu-heading') %>
       <ul class='pull-right' >
         <li>
-          <% if current_user %>
-            <%= link_with_icon path: scripts_path, icon: 'folder-open-alt' %>
-          <% else %>
+          <% unless current_user %>
             <%= link_with_icon path: try_path, icon: :leaf %>
           <% end %>
         </li>

@@ -7,6 +7,8 @@ body, header .pure-menu.pure-menu-open { background-color: $bg-color; }
 $accentColor: #34D0B6;
 $padding: 20px;
 
+form { display: inline-block; }
+
 .pull-right { float: right; }
 .pull-left { float: left; }
 
@@ -32,13 +34,13 @@ $padding: 20px;
   @include cake-layer;
 }
 
-.pure-g-r.pure-center {
-  float: none;
-  margin: auto auto;
-  text-align: center;
-  padding: 0 20px;
-}
-.pure-g-r.pure-center * { text-align: left; }
+.script-wrapper { height: 55px; border-bottom: thin solid #ddd; }
+
+.right-my-children { text-align: right; }
+
+.pure-g-r > .pure-u, .pure-g-r > [class *="pure-u-"] { padding: 5px; text-align: left; }
+.pure-g-r .pure-center { text-align: center; }
+.pure-center > [class *="pure-u-"] { text-align: left; }
 
 .pure-input-1-1 { width: 100%; }
 .pure-button.pure-input-1-1 { box-shadow: none; border: none; }
