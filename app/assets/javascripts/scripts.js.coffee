@@ -62,4 +62,3 @@ editor =
   replaceContentWithBarChart: (content, barChart) ->
     theHtml = content.html()
     content.html(theHtml.replace(new RegExp(barChart, "g"), "$Bar chart functionality coming soon!$"))
-
