@@ -7,15 +7,15 @@
           <%= link_to script.title || 'Untitled Script', script, class: 'pure-button pure-button-primary script-title' %>
         </div>
         <%= div_for(script, class: 'script-actions pull-right pure-u-1-2 right-my-children') do %>
-          <%= link_to '<i class="icon-edit"></i>'.html_safe, edit_script_path(script), class: 'pure-button' %>
-          <%= link_to '<i class="icon-file"></i>'.html_safe, script_path(script, format: :pdf), class: 'pure-button' %>
-          <%= link_to '<i class="icon-trash"></i>'.html_safe, script, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pure-button' %>
+          <%= edit_script_button(script) %>
+          <%= pdf_script_button(script) %>
+          <%= delete_script_button(script) %>
         <% end %>
       <div class='clear'></div>
       </div>
       <br>
     <% end %>
     <br>
-    <%= link_to '<i class="icon-plus"></i> &nbsp; Create a New Script'.html_safe, new_script_path, class: 'pure-button' %>
+    <%= create_script_button %>
   </div>
 </div>
