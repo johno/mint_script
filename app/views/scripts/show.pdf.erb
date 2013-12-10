@@ -1,1 +1,1 @@
-<%= @markdown.render(@script.content).html_safe %>
+<%= @markdown.render(@script.content || '').html_safe %>
