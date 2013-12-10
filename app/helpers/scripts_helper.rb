@@ -1,17 +1,31 @@
 module ScriptsHelper
 
   def edit_script_button(script)
-    link_to '<i class="icon-edit"></i>'.html_safe, edit_script_path(script), class: 'pure-button'
+    link_to '<i class="icon-edit"></i> &nbsp; EDIT'.html_safe, 
+            edit_script_path(script), 
+            class: 'pure-button'
   end
 
   def pdf_script_button(script)
-    link_to '<i class="icon-file"></i>'.html_safe, 
+    link_to '<i class="icon-file"></i> &nbsp; PDF'.html_safe, 
             script_path(script, format: :pdf), 
             class: 'pure-button'
   end
 
+  def scripts_button
+    link_to '<i class="icon-folder-open"></i> &nbsp; ALL'.html_safe,
+            scripts_path,
+            class: 'pure-button'
+  end
+
+  def preview_script_button(script)
+    link_to '<i class="icon-book"></i> &nbsp; PREVIEW'.html_safe,
+            script_path(script),
+            class: 'pure-button'
+  end
+
   def delete_script_button(script)
-    link_to '<i class="icon-trash"></i>'.html_safe, 
+    link_to '<i class="icon-trash"></i> &nbsp; DELETE'.html_safe, 
             script, 
             method: :delete, 
             data: { confirm: 'Are you sure?' }, 
