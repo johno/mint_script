@@ -120,6 +120,6 @@ class ScriptsController < ApplicationController
   end
   
   def try
-    @script = Script.new
+    @script = Script.create!
   end
 end
