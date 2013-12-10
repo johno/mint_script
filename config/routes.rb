@@ -7,6 +7,8 @@ MintScript::Application.routes.draw do
     end
   end
 
+  match 'user_root' => 'scripts#index'
+
   resources :scripts do
     member do
       put :save

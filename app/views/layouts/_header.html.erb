@@ -1,15 +1,33 @@
 <header>
   <div class='pure-menu pure-menu-open pure-menu-horizontal'>
-    <% if @script and action_name == 'edit' %>
-      <div class='pure-u-1 pure-center room-on-left'>
+    <% if @script %>
+      <div class='pure-u-1-2 pure-center room-on-left'>
         <%= edit_script_title(@script) %>
       </div>
+      <ul class="pull-right">
+        <li><%= scripts_button %></li>
+        <li>
+          <%= action_name == 'edit' ? 
+                preview_script_button(@script) : 
+                edit_script_button(@script) %>
+        </li>
+        <li><%= pdf_script_button(@script) %></li>
+        <li>
+          <% if current_user %>
+            <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout %>
+          <% else %>
+            <%= link_with_icon path: new_user_registration_path, icon: :leaf, text: :sign_up %>
+          <% end %>
+        </li>
+      </ul>
     <% else %>
       <%= link_to('mintscript', root_path, class: 'pure-menu-heading') %>
       <ul class='pull-right' >
         <li>
-          <% unless current_user %>
-            <%= link_with_icon path: try_path, icon: :leaf %>
+          <% if current_user %>
+            <%= link_with_icon path: scripts_path, icon: :'folder-open-alt' %>
+          <% else %>
+            <%= link_with_icon path: new_user_registration_path, icon: :leaf, text: :sign_up %>
           <% end %>
         </li>
         <li>
