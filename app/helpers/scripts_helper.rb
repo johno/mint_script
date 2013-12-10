@@ -12,6 +12,12 @@ module ScriptsHelper
             class: 'pure-button'
   end
 
+  def add_script_button
+    link_to '<i class="icon-plus"></i>'.html_safe, 
+        new_script_path, 
+        class: 'pure-button'
+  end
+
   def scripts_button
     link_to '<i class="icon-folder-open"></i> &nbsp; ALL'.html_safe,
             scripts_path,

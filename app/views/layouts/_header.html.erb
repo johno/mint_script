@@ -12,6 +12,7 @@
                 edit_script_button(@script) %>
         </li>
         <li><%= pdf_script_button(@script) %></li>
+        <li><%= add_script_button %></li>
         <li>
           <% if current_user %>
             <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout %>
