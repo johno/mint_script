@@ -5,37 +5,38 @@
         <%= edit_script_title(@script) %>
       </div>
       <ul class="pull-right">
-        <li><%= scripts_button %></li>
-        <li>
-          <%= action_name == 'edit' ? 
-                preview_script_button(@script) : 
-                edit_script_button(@script) %>
-        </li>
-        <li><%= pdf_script_button(@script) %></li>
-        <li><%= add_script_button %></li>
-        <li>
-          <% if current_user %>
-            <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout %>
-          <% else %>
-            <%= link_with_icon path: new_user_registration_path, icon: :leaf, text: :sign_up %>
-          <% end %>
-        </li>
+        <% if current_user %>
+          <li><%= scripts_button %></li>
+          <li>
+            <%= action_name == 'edit' ? 
+                  preview_script_button(@script) : 
+                  edit_script_button(@script) %>
+          </li>
+          <li><%= pdf_script_button(@script) %></li>
+          <li><%= add_script_button %></li>
+        <% end %>
+        <% if current_user %>
+          <li><%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout, class: 'pure-button' %></li>
+        <% else %>
+          <li><%= link_with_icon path: new_user_registration_path, icon: :leaf, text: :sign_up_for_free, class: 'pure-button' %></li>
+          <li><%= link_with_icon path: new_user_session_path, icon: :signin , class: 'pure-button' %></li>
+        <% end %>
       </ul>
     <% else %>
       <%= link_to('mintscript', root_path, class: 'pure-menu-heading') %>
       <ul class='pull-right' >
         <li>
           <% if current_user %>
-            <%= link_with_icon path: scripts_path, icon: :'folder-open-alt' %>
+            <%= link_with_icon path: scripts_path, icon: :'folder-open-alt', class: 'pure-button' %>
           <% else %>
-            <%= link_with_icon path: new_user_registration_path, icon: :leaf, text: :sign_up %>
+            <%= link_with_icon path: new_user_registration_path, icon: :leaf, text: :sign_up_for_free, class: 'pure-button' %>
           <% end %>
         </li>
         <li>
           <% if current_user %>
-            <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout %>
+            <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout, class: 'pure-button' %>
           <% else %>
-            <%= link_with_icon path: new_user_session_path, icon: :signin %>
+            <%= link_with_icon path: new_user_session_path, icon: :signin, class: 'pure-button' %>
           <% end %>
         </li>
       </ul>

@@ -21,6 +21,6 @@ MintScript::Application.routes.draw do
   resources :projects
   resources :images, only: [:create, :index]
 
-  root to: 'static_pages#home'
+  root to: 'scripts#try'
   match '/try' => 'scripts#try', via: [:get]
 end

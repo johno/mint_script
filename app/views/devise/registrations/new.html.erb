@@ -1,6 +1,6 @@
 <div class='pure-g-r pure-center'> 
   <div class="pure-u-1-3 tons-of-margin-on-top">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: :sessy_form }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       <%= f.email_field :email, autofocus: true, placeholder: :Email, id: :email, class: 'pure-input-1-1' %>
       <%= f.password_field :password, placeholder: :Password, id: :password, class: 'pure-input-1-1' %>
@@ -8,7 +8,7 @@
       <%= f.submit 'Create your mintscript account', class: 'pure-button pure-button pure-input-1-1', id: :submit %>
     <% end %>
     <div class="help-links">
-      <%= link_to "sign in", new_session_path(resource_name), class: 'grab-email pull-left' %>
+      <%= link_to "already have an account", new_session_path(resource_name), class: 'grab-email pull-left' %>
     </div>
   </div>
 </div>
