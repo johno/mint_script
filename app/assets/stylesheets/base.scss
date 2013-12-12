@@ -7,6 +7,8 @@ body, header .pure-menu.pure-menu-open { background-color: $bg-color; }
 $accentColor: #34D0B6;
 $padding: 20px;
 
+a { color: darken($accentColor, 10%); }
+
 form { display: inline-block; }
 
 .pull-right { float: right; }
@@ -69,4 +71,4 @@ input + input { border-top: thin solid #ddd; }
 .ace-tomorrow .ace_scroller { background: transparent !important; }
 #preview { background-color: $bg-color; }
 
-h1, h2, h3, h4, h5, h6 { font-weight: 200; color: #444; }
+h1, h2, h3, h4, h5, h6 { font-weight: 200; color: #444; margin-bottom: 5px; }
