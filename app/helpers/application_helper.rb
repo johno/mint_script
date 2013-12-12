@@ -14,6 +14,6 @@ module ApplicationHelper
   end
   
   def icon(icon)
-    "<i class='icon-#{icon}'></i>".html_safe
+    "<i class='#{icon}'></i>".html_safe
   end
 end

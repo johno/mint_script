@@ -31,7 +31,7 @@ module ScriptsHelper
   end
 
   def delete_script_button(script)
-    link_to '<i class="fa fa-trash"></i> &nbsp; DELETE'.html_safe, 
+    link_to '<i class="fa fa-trash-o"></i> &nbsp; DELETE'.html_safe, 
             script, 
             method: :delete, 
             data: { confirm: 'Are you sure?' }, 
