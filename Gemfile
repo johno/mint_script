@@ -26,7 +26,7 @@ gem 'pure-sass', '0.0.2'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'gravatar_image_tag'
-gem 'font-awesome-sass-rails'
+gem 'font-awesome-rails', '4.0.3.0'
 gem 'devise'
 gem 'thin'
 

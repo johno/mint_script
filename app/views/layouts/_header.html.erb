@@ -16,10 +16,10 @@
           <li><%= add_script_button %></li>
         <% end %>
         <% if current_user %>
-          <li><%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout, class: 'pure-button' %></li>
+          <li><%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :'fa fa-sign-out', class: 'pure-button' %></li>
         <% else %>
-          <li><%= link_with_icon path: new_user_registration_path, icon: :leaf, text: :sign_up_for_free, class: 'pure-button' %></li>
-          <li><%= link_with_icon path: new_user_session_path, icon: :signin , class: 'pure-button' %></li>
+          <li><%= link_with_icon path: new_user_registration_path, icon: :'fa fa-leaf', text: :sign_up_for_free, class: 'pure-button' %></li>
+          <li><%= link_with_icon path: new_user_session_path, icon: :'fa fa-sign-in' , class: 'pure-button' %></li>
         <% end %>
       </ul>
     <% else %>
@@ -27,16 +27,16 @@
       <ul class='pull-right' >
         <li>
           <% if current_user %>
-            <%= link_with_icon path: scripts_path, icon: :'folder-open-alt', class: 'pure-button' %>
+            <%= link_with_icon path: scripts_path, icon: :'fa fa-folder-open', class: 'pure-button' %>
           <% else %>
-            <%= link_with_icon path: new_user_registration_path, icon: :leaf, text: :sign_up_for_free, class: 'pure-button' %>
+            <%= link_with_icon path: new_user_registration_path, icon: :'fa fa-leaf', text: :sign_up_for_free, class: 'pure-button' %>
           <% end %>
         </li>
         <li>
           <% if current_user %>
-            <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :signout, class: 'pure-button' %>
+            <%= link_with_icon path: destroy_user_session_path, method: :delete, icon: :'fa fa-sign-out', class: 'pure-button' %>
           <% else %>
-            <%= link_with_icon path: new_user_session_path, icon: :signin, class: 'pure-button' %>
+            <%= link_with_icon path: new_user_session_path, icon: :'fa fa-sign-in', class: 'pure-button' %>
           <% end %>
         </li>
       </ul>
