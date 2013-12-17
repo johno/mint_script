@@ -5,7 +5,9 @@ class ScriptsController < ApplicationController
   # GET /scripts
   # GET /scripts.json
   def index
-    @scripts = current_user.scripts.order('updated_at DESC')
+    @scripts = current_user ?
+      current_user.scripts.order('updated_at DESC') :
+      []
 
     respond_to do |format|
       format.html # index.html.erb
@@ -36,7 +38,7 @@ class ScriptsController < ApplicationController
   # GET /scripts/new
   # GET /scripts/new.json
   def new
-    @script = Script.create!(user_id: current_user.id)
+    @script = Script.create!(user_id: current_user ? current_user.id : nil)
     redirect_to edit_script_path(@script)
   end
 
@@ -69,7 +71,7 @@ class ScriptsController < ApplicationController
 
     respond_to do |format|
       if @script.update_attributes(params[:script])
-        format.html { redirect_to scripts_path }
+        format.html { redirect_to edit_script_path(@script) }
         format.json { head :no_content }
       else
         format.html { render action: :edit }

@@ -1,13 +1,13 @@
 module ScriptsHelper
 
   def edit_script_button(script)
-    link_to '<i class="fa fa-edit"></i> &nbsp; EDIT'.html_safe, 
+    link_to '<i class="fa fa-edit"></i>'.html_safe, 
             edit_script_path(script), 
             class: 'pure-button'
   end
 
   def pdf_script_button(script)
-    link_to '<i class="fa fa-file-text"></i> &nbsp; PDF'.html_safe, 
+    link_to '<i class="fa fa-file-text"></i>'.html_safe, 
             script_path(script, format: :pdf), 
             class: 'pure-button'
   end
@@ -19,19 +19,19 @@ module ScriptsHelper
   end
 
   def scripts_button
-    link_to '<i class="fa fa-folder-open"></i> &nbsp; ALL'.html_safe,
+    link_to '<i class="fa fa-folder-open"></i>'.html_safe,
             scripts_path,
             class: 'pure-button'
   end
 
   def preview_script_button(script)
-    link_to '<i class="fa fa-book"></i> &nbsp; PREVIEW'.html_safe,
+    link_to '<i class="fa fa-eye"></i>'.html_safe,
             script_path(script),
             class: 'pure-button'
   end
 
   def delete_script_button(script)
-    link_to '<i class="fa fa-trash-o"></i> &nbsp; DELETE'.html_safe, 
+    link_to '<i class="fa fa-trash-o"></i>'.html_safe, 
             script, 
             method: :delete, 
             data: { confirm: 'Are you sure?' }, 
@@ -54,7 +54,7 @@ module ScriptsHelper
     form_for(script) do |f|
       capture do
         concat f.hidden_field(:is_private, value: script.is_private? ? false : true)
-        concat f.submit "#{script.is_private? ? 'MAKE PUBLIC' : 'MAKE PRIVATE'}", class: 'pure-button'
+        concat "<button type='submit' class='pure-button'><i class='fa #{ script.is_private ? 'fa-unlock' : 'fa-lock' }'></i></button>".html_safe
       end
     end.html_safe
   end

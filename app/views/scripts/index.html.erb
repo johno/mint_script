@@ -1,10 +1,11 @@
 <div class='pure-center'>
-  <div class='pure-u-7-8'>
+  <div class='pure-u-7-8 room-on-top'>
     <h1>Your collection</h1>
     <% @scripts.each do |script| %>
       <div class='script-wrapper'>
         <div class="pure-u-1-2 pull-left">
-          <%= link_to script.title || 'Untitled Script', script, class: 'pure-button pure-button-primary script-title' %>
+          <%= link_to script.title || 'Untitled Script', script, class: 'script-title' %>
+          <br>
         </div>
         <%= div_for(script, class: 'script-actions pull-right pure-u-1-2 right-my-children') do %>
           <%= edit_script_button(script) %>

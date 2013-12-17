@@ -12,6 +12,11 @@
                   preview_script_button(@script) : 
                   edit_script_button(@script) %>
           </li>
+          <% if action_name == 'edit' %>
+            <li>
+              <%= make_public_or_private(@script) %>
+            </li>
+          <% end %>
           <li><%= pdf_script_button(@script) %></li>
           <li><%= add_script_button %></li>
         <% end %>
