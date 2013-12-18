@@ -7,6 +7,8 @@ body, header .pure-menu.pure-menu-open { background-color: $bg-color; }
 $accentColor: #34D0B6;
 $padding: 20px;
 
+.room-on-bottom { padding-bottom: 20px; }
+
 a { color: darken($accentColor, 10%); }
 
 form { display: inline-block; }
