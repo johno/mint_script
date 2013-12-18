@@ -5,9 +5,8 @@ class ScriptsController < ApplicationController
   # GET /scripts
   # GET /scripts.json
   def index
-    @scripts = current_user ?
-      current_user.scripts.order('updated_at DESC') :
-      []
+    redirect_to try_path unless current_user
+    @scripts = current_user.scripts.order('updated_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
