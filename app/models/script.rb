@@ -13,7 +13,7 @@ class Script < ActiveRecord::Base
 # Welcome to Mintscript
 ## A new way to write markdown
 
-[Sign up for a free account](http://http://mint-script.herokuapp.com/users/signup)
+[Sign up for a free account](http://mint-script.herokuapp.com/users/sign_up)
 
 ## What's Markdown?
 
